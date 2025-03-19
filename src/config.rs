@@ -98,8 +98,18 @@ const CHARS: &[char] = &[
     'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
 ];
 
-pub const RENDEZVOUS_SERVERS: &[&str] = &["172.16.222.200"];
-pub const RS_PUB_KEY: &str = "gxzjy_wwz_shishen";
+pub const RENDEZVOUS_SERVERS: &str = match option_env!("RENDEZVOUS_SERVERS") {
+    Some(servers) if !servers.is_empty() => servers,
+    _ => "RENDEZVOUS_SERVERS", // 默认值
+};
+
+pub const RS_PUB_KEY: &str = match option_env!("RS_PUB_KEY") {
+    Some(key) if !key.is_empty() => key,
+    _ => "RS_PUB_KEY", // 默认公钥
+};
+
+// pub const RENDEZVOUS_SERVERS: &[&str] = &["RENDEZVOUS_SERVERS"];
+// pub const RS_PUB_KEY: &str = "RS_PUB_KEY";
 
 pub const RENDEZVOUS_PORT: i32 = 21116;
 pub const RELAY_PORT: i32 = 21117;
