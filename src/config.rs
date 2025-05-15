@@ -2401,8 +2401,7 @@ pub mod keys {
     pub const OPTION_APPROVE_MODE: &str = "approve-mode";
     pub const OPTION_VERIFICATION_METHOD: &str = "verification-method";
     pub const OPTION_CUSTOM_RENDEZVOUS_SERVER: &str = "custom-rendezvous-server";
-    // pub const OPTION_API_SERVER: &str = "api-server";
-    pub const OPTION_API_SERVER: &str = "http://172.16.222.200:21114/";
+    pub const OPTION_API_SERVER: &str = "api-server";
 
     pub const OPTION_KEY: &str = "key";
     pub const OPTION_ALLOW_WEBSOCKET: &str = "allow-websocket";
